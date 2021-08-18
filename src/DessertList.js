@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getDesserts } from './fetch-utils.js';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class DessertList extends Component {
     state = { desserts: [] };
@@ -14,7 +14,7 @@ class DessertList extends Component {
                 {this.state.desserts.map((c) => (
                     <div className="dessert-card">
                         <h2>
-                            {/* <Link to={`/desserts/${desserts.id}`}>{desserts.name}</Link> */}
+                            <Link to={`/desserts`}>{c.name}</Link>
                         </h2>
                     </div>
                 ))}
