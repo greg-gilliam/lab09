@@ -6,7 +6,7 @@ class DessertList extends Component {
     state = { desserts: [] };
     componentDidMount = async () => {
         const data = await getDesserts();
-        this.setState({ cartoons: data });
+        this.setState({ desserts: data });
     };
      render() { 
         return (
@@ -14,7 +14,7 @@ class DessertList extends Component {
                 {this.state.desserts.map((c) => (
                     <div className="dessert-card">
                         <h2>
-                            {/* <Link to={`/cartoons/${dessert.id}`}>{dessert.name}</Link> */}
+                            {/* <Link to={`/desserts/${desserts.id}`}>{desserts.name}</Link> */}
                         </h2>
                     </div>
                 ))}
