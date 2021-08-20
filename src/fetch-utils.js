@@ -30,3 +30,16 @@ export const updateDessert = async (dessertObject) => {
     const data = await resp.json();
     return data;
 };
+
+export const createDessert = async (dessertObject) => {
+    const resp = await fetch(`${URL}/desserts/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dessertObject)
+    });
+    
+    const data = await resp.json();
+    return data;
+};

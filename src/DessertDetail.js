@@ -9,7 +9,7 @@ class DessertDetail extends Component {
         icing: '',
         type_id: 0,
         message: '',
-        error: false
+        error: false,
      };
 
      componentDidMount = async () => {
