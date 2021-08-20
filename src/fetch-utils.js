@@ -17,3 +17,16 @@ export const getTypes = async () => {
     const data = await resp.json();
     return data;
 };
+
+export const updateDessert = async (dessertObject) => {
+    const resp = await fetch(`${URL}/desserts/${dessertObject.id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dessertObject)
+    });
+    
+    const data = await resp.json();
+    return data;
+};
