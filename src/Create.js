@@ -6,6 +6,7 @@ import classNames from 'classnames';
 
 class Create extends Component {
     state = {
+            types: [],
             name: '',
             icing: '',
             type_id: 0,
@@ -64,14 +65,14 @@ class Create extends Component {
                         <div className="form-group">
                             <label>Type: </label>
                             <select 
-                            value={this.state.type}
+                            value={this.state.type_id}
                             onChange={(e)=>{
                                 this.setState({ type: e.target.value });
                             }}
                         >    
                                 {this.state.types.map((type) => {
                                     return (
-                                        <option value={type.name}>{type.name}</option>
+                                        <option key={type.name} value={type.name}>{type.name}</option>
                                     );
                                 })}
                             </select>

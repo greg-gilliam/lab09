@@ -4,6 +4,7 @@ import classNames from 'classnames';
 
 class DessertDetail extends Component {
     state = { 
+        types: [],
         id: 0,
         name: '',
         icing: '',
@@ -74,7 +75,7 @@ class DessertDetail extends Component {
                 >    
                         {this.state.types.map((type) => {
                             return (
-                                <option value={type.name}>{type.name}</option>
+                                <option key={type.name} value={type.name}>{type.name}</option>
                             );
                         })}
                     </select>
