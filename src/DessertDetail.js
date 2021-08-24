@@ -7,7 +7,7 @@ class DessertDetail extends Component {
         types: [],
         id: 0,
         name: '',
-        icing: '',
+        icing: 'false',
         type_id: 0,
         message: '',
         error: false,
@@ -29,7 +29,7 @@ class DessertDetail extends Component {
         const dessertData = {
             id: this.state.id,
             name: this.state.name,
-            type: this.state.type_id
+            type_id: this.state.type_id
         }
         const data = await updateDessert(dessertData);
         if(data.error){
