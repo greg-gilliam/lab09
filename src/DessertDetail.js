@@ -7,7 +7,7 @@ class DessertDetail extends Component {
         types: [],
         id: 0,
         name: '',
-        icing: 'false',
+        icing: false,
         type_id: 0,
         message: '',
         error: false,
