@@ -21,7 +21,7 @@ class DessertDetail extends Component {
      };
     getDessertId = () => {
         const dessertObject = this.state.desserts.find(
-            (dessert)=>dessert.name === this.state.network);
+            (dessert)=>dessert.name === this.state.name);
         return dessertObject.id;
     }
     handleClick = async (e)=>{
