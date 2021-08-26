@@ -6,8 +6,10 @@ class Header extends Component {
     render() { 
         return ( 
             <header>
+                <div>
                 <NavLink exact to="/">Home</NavLink>
                 <NavLink to="/create">Add New Dessert</NavLink>
+                </div>
             </header>
          );
     }

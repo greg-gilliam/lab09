@@ -6,8 +6,9 @@ import classNames from 'classnames';
 
 class Create extends Component {
     state = {
+            types: [],
             name: '',
-            icing: '',
+            icing: false,
             type_id: 0,
             message: '',
             error: false,
@@ -19,16 +20,16 @@ class Create extends Component {
 
         getDessertId = () => {
             const dessertObject = this.state.desserts.find(
-                (dessert)=>dessert.name === this.state.network);
+                (dessert)=>dessert.name === this.state.desserts);
             return dessertObject.id;
         };
 
         handleClick = async (e) =>{
             e.preventDefault();
             const dessertData = {
-                id: this.state.id,
                 name: this.state.name,
-                type: this.state.type_id
+                icing: this.state.icing,
+                type_id: this.state.type_id
             }
             const data = await createDessert(dessertData);
             if (data.error){
@@ -64,14 +65,14 @@ class Create extends Component {
                         <div className="form-group">
                             <label>Type: </label>
                             <select 
-                            value={this.state.type}
+                            value={this.state.type_id}
                             onChange={(e)=>{
                                 this.setState({ type: e.target.value });
                             }}
                         >    
                                 {this.state.types.map((type) => {
                                     return (
-                                        <option value={type.name}>{type.name}</option>
+                                        <option key={type.name} value={type.name}>{type.name}</option>
                                     );
                                 })}
                             </select>

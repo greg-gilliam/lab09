@@ -4,9 +4,10 @@ import classNames from 'classnames';
 
 class DessertDetail extends Component {
     state = { 
+        types: [],
         id: 0,
         name: '',
-        icing: '',
+        icing: false,
         type_id: 0,
         message: '',
         error: false,
@@ -20,7 +21,7 @@ class DessertDetail extends Component {
      };
     getDessertId = () => {
         const dessertObject = this.state.desserts.find(
-            (dessert)=>dessert.name === this.state.network);
+            (dessert)=>dessert.name === this.state.name);
         return dessertObject.id;
     }
     handleClick = async (e)=>{
@@ -28,7 +29,7 @@ class DessertDetail extends Component {
         const dessertData = {
             id: this.state.id,
             name: this.state.name,
-            type: this.state.type_id
+            type_id: this.state.type_id
         }
         const data = await updateDessert(dessertData);
         if(data.error){
@@ -74,7 +75,7 @@ class DessertDetail extends Component {
                 >    
                         {this.state.types.map((type) => {
                             return (
-                                <option value={type.name}>{type.name}</option>
+                                <option key={type.name} value={type.name}>{type.name}</option>
                             );
                         })}
                     </select>
